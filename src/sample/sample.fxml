@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="561.0" prefWidth="510.0" style="-fx-background-color: #44615F;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <ComboBox fx:id="Marka" layoutX="75.0" layoutY="39.0" onAction="#cleanModel" prefWidth="150.0" promptText="Wybierz marke" />
+        <ComboBox fx:id="Model" disable="true" layoutX="286.0" layoutY="39.0" onShowing="#setModel" prefWidth="150.0" promptText="Wybierz model" />
+        <DatePicker fx:id="OdKiedy" layoutX="51.0" layoutY="99.0" />
+        <DatePicker fx:id="DoKiedy" layoutX="286.0" layoutY="99.0" />
+        <Button fx:id="Check" layoutX="225.0" layoutY="149.0" mnemonicParsing="false" onAction="#checkAvailable" text="Sprawdz" />
+        <Button fx:id="Close" layoutX="470.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="26.0" text="X" />
+      <ScrollPane fx:id="scroll" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="374.0" minWidth="510.0" prefHeight="374.0" prefWidth="510.0" style="-fx-background: #CACACA;" />
+    </children>
+</AnchorPane>
