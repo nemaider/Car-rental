@@ -16,34 +16,34 @@ public class ValueSetter {
 
     public void setMarka(ComboBox Model)
     {
-        Model.getItems().add("bimmer");
-        Model.getItems().add("benz");
-        Model.getItems().add("bentley");
+        Model.getItems().add("BMW");
+        Model.getItems().add("Mercedes");
+        Model.getItems().add("Volkswagen");
     }
 
     public static void setModel()
     {
         if(Model.getItems().isEmpty() && Marka.getValue()!=null)
         {
-            if(Marka.getValue().equals("bimmer"))
+            if(Marka.getValue().equals("BMW"))
             {
-                Model.getItems().add("M3 GTR");
+                Model.getItems().add("M3");
                 Model.getItems().add("E46");
                 Model.getItems().add("X5");
             }
 
-            if(Marka.getValue().equals("benz"))
+            if(Marka.getValue().equals("Mercedes"))
             {
-                Model.getItems().add("C63 AMG");
-                Model.getItems().add("GLA");
-                Model.getItems().add("CLS");
+                Model.getItems().add("GLC");
+                Model.getItems().add("Vito");
+                Model.getItems().add("CLA");
             }
 
-            if(Marka.getValue().equals("bentley"))
+            if(Marka.getValue().equals("Volkswagen"))
             {
-                Model.getItems().add("Continental");
-                Model.getItems().add("Bentayga");
-                Model.getItems().add("Flying Spurs");
+                Model.getItems().add("Arteon");
+                Model.getItems().add("Passat");
+                Model.getItems().add("Golf");
             }
         }
     }

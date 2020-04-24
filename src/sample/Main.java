@@ -1,6 +1,7 @@
 package sample;
 
 import Client.ClientHandler;
+import DBConnect.Connector;
 import ValuesSetter.ValueSetter;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -14,6 +15,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.sql.Connection;
 
 public class Main extends Application
 {

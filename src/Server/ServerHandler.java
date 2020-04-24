@@ -1,5 +1,6 @@
 package Server;
 
+import DBConnect.Connector;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextArea;
@@ -12,6 +13,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +52,7 @@ public class ServerHandler implements Runnable
                 });
 
                 Thread waitForRequest = new Thread(new AnserTheRequest(messages,socket));
-                Thread sendRemoteMessage = new Thread(new SendMessage(messages,field,sockets));
+                Thread sendRemoteMessage = new Thread(new SendOfert(messages,field,sockets));
                 waitForRequest.start();
                 sendRemoteMessage.start();
             }
@@ -61,13 +64,13 @@ public class ServerHandler implements Runnable
     }
 }
 
-class SendMessage implements Runnable
+class SendOfert implements Runnable
 {
     TextArea messages;
     TextField field;
     List sockets;
 
-    SendMessage(TextArea messages, TextField field, List sockets)
+    SendOfert(TextArea messages, TextField field, List sockets)
     {
         this.messages = messages;
         this.field = field;
@@ -133,21 +136,40 @@ class AnserTheRequest implements Runnable
         {
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
+            Connector connector = new Connector();
+            connector.connect();
 
             while(true)
             {
                 String messageFromUser = in.readUTF();
                 String messageToUser = "0";
+                int size;
 
-                String parameters[] = messageFromUser.split("[^A-Za-z0-9]");
-
-                if(parameters[0].equalsIgnoreCase("bimmer"))
+                String parameters[] = messageFromUser.split("[^A-Za-z0-9-]");
+//                System.out.println("Parameters lenght: " + parameters.length);
+//                for(int i=0;i<parameters.length;i++)
+//                    System.out.println(parameters[i]);
+                if(parameters.length == 3)
                 {
-                    messageToUser = "1 bimmer x5";
+                    connector.makeInsert(parameters);
+                    messageToUser="-1";
                 }
-                if(parameters[0].equalsIgnoreCase("benz"))
+
+                if(parameters.length == 4 && parameters[0]!=null && parameters[3]!=null && !parameters[2].equals("null"))
                 {
-                    messageToUser = "3 benz cls 63amg chujwieco";
+                    ResultSet results = connector.executeQuery(parameters[0],parameters[1],parameters[2],parameters[3]);
+
+                    size = results.last() ? results.getRow() : 0;
+                    results.beforeFirst();
+                    System.out.println("rozmiar: " + size);
+                    if(size!=0)
+                    {
+                        messageToUser = size + " ";
+                        while(results.next())
+                        {
+                            messageToUser += results.getString("Marka") + " " + results.getString("Model") + " " + results.getString("id_car") + " ";
+                        }
+                    }
                 }
 
                 out.writeUTF(messageToUser);
@@ -156,9 +178,10 @@ class AnserTheRequest implements Runnable
                 messages.appendText("Server: Odsylam klientowi dane\n");
             }
         }
-        catch (IOException e)
+        catch (IOException | SQLException e)
         {
             System.out.println("Klient odlaczyl sie");
+            e.printStackTrace();
             if(socket != null)
             {
                 try
