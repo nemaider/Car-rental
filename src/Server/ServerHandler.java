@@ -146,22 +146,25 @@ class AnserTheRequest implements Runnable
                 int size;
 
                 String parameters[] = messageFromUser.split("[^A-Za-z0-9-]");
-//                System.out.println("Parameters lenght: " + parameters.length);
-//                for(int i=0;i<parameters.length;i++)
-//                    System.out.println(parameters[i]);
-                if(parameters.length == 3)
+
+                /*if(parameters.length == 3)
                 {
                     connector.makeInsert(parameters);
                     messageToUser="-1";
-                }
+                }*/
 
-                if(parameters.length == 4 && parameters[0]!=null && parameters[3]!=null && !parameters[2].equals("null"))
+                if(parameters.length == 4 /*&& parameters[0]!=null && parameters[3]!=null && !parameters[2].equals("null")*/)
                 {
                     ResultSet results = connector.executeQuery(parameters[0],parameters[1],parameters[2],parameters[3]);
 
-                    size = results.last() ? results.getRow() : 0;
-                    results.beforeFirst();
-                    System.out.println("rozmiar: " + size);
+                    if(results==null)
+                        size=0;
+                    else {
+                        size = results.last() ? results.getRow() : 0;
+                        results.beforeFirst();
+                        System.out.println("rozmiar: " + size);
+                    }
+
                     if(size!=0)
                     {
                         messageToUser = size + " ";

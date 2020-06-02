@@ -97,7 +97,6 @@ class GetMessage implements Runnable
             {
                 String messageFromServer = in.readUTF();
 
-                //System.out.println("server: " + messageFromServer);
                 Platform.runLater(()->
                 {
                     try
@@ -149,7 +148,7 @@ class GetMessage implements Runnable
         else
         {
             offertsScrollBox.setPrefWidth((j-1)*125);
-            offertsMainPane.setPrefSize(offertsScrollBox.getHeight(),(j-1)*125);
+            offertsMainPane.setPrefSize(offertsScrollBox.getHeight(),(j)*125);
             offert = new Pane[j];
         }
 
@@ -164,15 +163,15 @@ class GetMessage implements Runnable
             ////////dodawanie oferty
             offertsMainPane.getChildren().add(offert[i]);
 
-            Label vin = new Label("vin: " + parameters[i+3]);
+            Label vin = new Label("vin: " + parameters[3*i+3]);
             vin.setLayoutX(90);
             vin.setLayoutY(20);
 
-            Label name = new Label(parameters[i+1]);
+            Label name = new Label(parameters[3*i+1]);
             name.setLayoutX(20);
             name.setLayoutY(20);
 
-            Label description = new Label("model: " + parameters[i+2]);
+            Label description = new Label("model: " + parameters[3*i+2]);
             description.setLayoutX(20);
             description.setLayoutY(40);
 

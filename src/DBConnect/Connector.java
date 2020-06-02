@@ -27,10 +27,23 @@ public class Connector
 
         try
         {
+
             Statement myQuery = conn.createStatement();
-            String query = "select cars.id_car,cars.marka,cars.model from rental right join cars on rental.id_car=cars.id_car where marka='" + marka + "' and model='" + model +
-                           "' and ('" + start + "' not between start and end and '" + end + "' not between start and end or start is null)";
-            results = myQuery.executeQuery(query);
+
+            ResultSet resultSet = myQuery.executeQuery("select count(*) from rental join cars on rental.id_car=cars.id_car where marka='" + marka + "' and model='" + model +
+                    "' and ('" + start + "' between start and end and '" + end + "' between start and end)");
+
+                while (resultSet.next())
+                {
+                    int columnValue = resultSet.getInt(1);
+                    System.out.println(columnValue);
+                    if (columnValue == 0) {
+                        String query = "select distinct cars.id_car,cars.marka,cars.model from rental right join cars on rental.id_car=cars.id_car where marka='" + marka + "' and model='" + model + "'";
+                        results = myQuery.executeQuery(query);
+                    }
+                    break;
+                }
+
         }
         catch(SQLException e)
         {
