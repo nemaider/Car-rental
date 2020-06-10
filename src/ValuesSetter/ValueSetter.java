@@ -2,8 +2,6 @@ package ValuesSetter;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-
-import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 
 public class ValueSetter {

@@ -24,7 +24,6 @@ public class Connector
     public ResultSet executeQuery(String marka, String model, String start, String end)
     {
         ResultSet results = null;
-
         try
         {
 
@@ -36,9 +35,9 @@ public class Connector
                 while (resultSet.next())
                 {
                     int columnValue = resultSet.getInt(1);
-                    System.out.println(columnValue);
+
                     if (columnValue == 0) {
-                        String query = "select distinct cars.id_car,cars.marka,cars.model from rental right join cars on rental.id_car=cars.id_car where marka='" + marka + "' and model='" + model + "'";
+                        String query = "select distinct cars.id_car,cars.marka,cars.model,cars.logo,cars.cena from cars where marka='" + marka + "' and model='" + model + "'";
                         results = myQuery.executeQuery(query);
                     }
                     break;
