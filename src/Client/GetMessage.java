@@ -20,6 +20,9 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * Funkcja odpowiadająca za odebranie wiadomości od serwera pracująca w osobnym wątku
+ */
 class GetMessage implements Runnable
 {
     Socket socket;
@@ -27,8 +30,13 @@ class GetMessage implements Runnable
     SendMessage sendMessage;
     Label noOfferts;
     Pane offert[];
-    int result;
+    int code;
 
+    /**
+     * @param socket socket przez który serwer komunikuje się z klientami
+     * @param offerts obiekt w którym wyświetlane są oferty pojazdów
+     * @param sendMessage obiekt klasy SendMessage który wykonuje polecenie zarezerwowania pojazdu
+     */
     GetMessage(Socket socket,ScrollPane offerts, SendMessage sendMessage)
     {
         this.offertsScrollBox = offerts;
@@ -36,6 +44,10 @@ class GetMessage implements Runnable
         this.sendMessage = sendMessage;
     }
 
+    /**
+     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
+     * funckja nowego wątku
+     */
     @Override
     public void run()
     {
@@ -49,21 +61,14 @@ class GetMessage implements Runnable
 
                 Platform.runLater(()->
                 {
-                    try
-                    {
-                        String parameters[] = messageFromServer.split("\\s+");
-                        result = Integer.parseInt(parameters[0]);
-
-                        if(result <= 0)
-                            showNoOfferts(result);
-                        else
-                            showCars(result,parameters);
-                    }
-                    catch
-                    (IOException e)
-                    {
-                        e.printStackTrace();
-                    }
+                    String parameters[] = messageFromServer.split("\\s+");
+                    code = Integer.parseInt(parameters[0]);
+                    if(code == -2)
+                        System.out.println("siema");
+                    else if(code <= 0)
+                        showNoOfferts(code);
+                    else
+                        showCars(code,parameters);
                 });
             }
         }
@@ -74,6 +79,12 @@ class GetMessage implements Runnable
     }
 //////////////////////////////oferty////////////////////////////////////////
 
+    /**
+     * funckja obliczająca cene za wypożyczenie
+     * @param cena cena pojazdu za dobe
+     * @param dni ilość dni na które pojazd ma być wypożyczony
+     * @return cena za wypożyczenie danego samochodu na daną ilość dni
+     */
     public Label calculate(String cena, String dni)
     {
         int koszt = Integer.parseInt(cena) * Integer.parseInt(dni);
@@ -81,7 +92,12 @@ class GetMessage implements Runnable
         return value;
     }
 
-    public void showCars(int j, String parameters[]) throws IOException
+    /**
+     * funkcja która wyświetla oferty, tworząca nowe obiekty dynamicznie
+     * @param j ilość ofert do wyświetlenia
+     * @param parameters dane pojazdów
+     */
+    public void showCars(int j, String parameters[])
     {
         //////////////////pane z wszystkimi ofertami
         Pane offertsMainPane = new Pane();
@@ -158,6 +174,11 @@ class GetMessage implements Runnable
         }
     }
 
+    /**
+     * funkcja wykonywana kiedy nie ma żadnych ofert do wyświetlenia
+     * może ona wyświetlić informacje iż samochód został zarezerwowany
+     * @param j paramert decydujący o działaniu funkcji. Jeśli paramert jest równy -1 wtedy znaczy to iż samochód został zarezerwowany, jeśli 0 znaczy iż nie ma ofert dla użytkownika
+     */
     public void showNoOfferts(int j)
     {
         Pane offertsMainPane = new Pane();

@@ -10,18 +10,29 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * klasa która obsługuje nowe watki serwera
+ */
 public class ServerHandler implements Runnable
 {
     static List sockets = new ArrayList();
     TextArea messages;
     TextField field;
 
+    /**
+     *
+     * @param messages obiekt w którym wypisywane są logi dla serwera
+     * @param field obiekt w którym administrator może wpisać informacje dla użytkowników
+     */
     ServerHandler(TextArea messages, TextField field)
     {
         this.field = field;
         this.messages = messages;
     }
-
+    /**
+     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
+     * funkcja nowego wątku
+     */
     @Override
     public void run()
     {

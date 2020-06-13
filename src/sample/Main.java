@@ -20,6 +20,7 @@ import java.sql.Connection;
 
 public class Main extends Application
 {
+    ///zmienne x i y określające położenie okna aplikacji na pulpicie
     private double x,y;
 
     @Override
@@ -39,9 +40,6 @@ public class Main extends Application
         Button check = (Button) scena.lookup("#Check");
         Button close = (Button) scena.lookup("#Close");
         ScrollPane offerts = (ScrollPane) scena.lookup("#scroll");
-
-        //new AutoCompleteComboBoxListener<>(marka);
-        //new AutoCompleteComboBoxListener<>(model);
 
         ValueSetter valueSetter = new ValueSetter();
         valueSetter.setMarka(marka);

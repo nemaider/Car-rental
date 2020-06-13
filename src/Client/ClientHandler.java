@@ -1,24 +1,15 @@
 package Client;
 
-import javafx.application.Platform;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+
 import java.io.IOException;
 import java.net.Socket;
 
-
+/**
+ * Klasa która uruchamia wątek klienta który odbiera wiadomosci od serwera oraz który wysyła wiadomości do serwera
+ */
 public class ClientHandler implements Runnable
 {
     ComboBox marka;
@@ -31,6 +22,15 @@ public class ClientHandler implements Runnable
     Thread getMessage;
     SendMessage sendMessage;
 
+    /**
+     * @param marka obiekt który przechowuje informacje na temat marki samochodu wybranej przez użytkownika
+     * @param model obiekt który przechowuje informacje na temat modelu samochodu wybranego przez użytkownika
+     * @param start obiekt który przechowuje informacje na temat początkowej daty wypożyczenia samochodu
+     * @param end obiekt który przechowuje informacje na temat końcowej daty wypożyczenia samochodu
+     * @param check przycisk który po wciśnięciu sprawdza dostępność pojazdu
+     * @param offerts obiekt w którym wyświetlane bedą oferty samochodów dostępnych do wyporzyczenia
+     * @param close przycisk zamykający okno
+     */
     public ClientHandler(ComboBox marka, ComboBox model, DatePicker start, DatePicker end,Button check,ScrollPane offerts,Button close)
     {
         this.marka = marka;
@@ -42,6 +42,10 @@ public class ClientHandler implements Runnable
         this.close = close;
     }
 
+    /**
+     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
+     * funckja nowego wątku
+     */
     @Override
     public void run()
     {
@@ -52,7 +56,7 @@ public class ClientHandler implements Runnable
 
             sendMessage = new SendMessage(marka,model,start,end,check,socket);
             getMessage = new Thread(new GetMessage(socket, offerts,sendMessage));
-            sendMessage.sendToQuery();
+            sendMessage.queryHandler();
             getMessage.start();
             //sendMessage.join();
         }
@@ -63,10 +67,12 @@ public class ClientHandler implements Runnable
         }
     }
 
+    /**
+     * funkcja kończąca wątek oraz wyrzucająca błąd jeśli sie to nie uda
+     * @throws InterruptedException
+     */
     public void endThreads() throws InterruptedException
     {
-//        sendMessage.sleep(1000);
-//        sendMessage.interrupt();
         getMessage.sleep(100);
         getMessage.interrupt();
     }

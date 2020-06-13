@@ -6,6 +6,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
+/**
+ * klasa odpowiedzialna za podstawowe funkcje aplikacji
+ */
 public class Controller
 {
     public ComboBox Model;
@@ -14,21 +19,18 @@ public class Controller
     public DatePicker DoKiedy;
     public Button Close;
 
-    //metody z ValueSetter.java
-    public void setModel()
-    {
+    /**
+     *funkcja która inicjuje dane o modelach po wybraniu marki pojazdu
+     */
+    public void setModel() throws SQLException {
         ValueSetter.Model=Model;
         ValueSetter.Marka=Marka;
         ValueSetter.setModel();
     }
 
-    public void checkAvailable()
-    {
-        ValueSetter.OdKiedy=OdKiedy;
-        ValueSetter.DoKiedy=DoKiedy;
-        ValueSetter.checkAvailable();
-    }
-
+    /**
+     * funkcja czyści informacje od modelach gdy zostanie zmieniona marka pojazdu
+     */
     public void cleanModel()
     {
         Model.getItems().remove(0,Model.getItems().size());
@@ -36,6 +38,9 @@ public class Controller
         Model.setPromptText("Wybierz model");
     }
 
+    /**
+     * funckja która wywoływana jest gdy użytkownik kończy prace
+     */
     public void close()
     {
         Stage stage = (Stage) Close.getScene().getWindow();

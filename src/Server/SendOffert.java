@@ -11,6 +11,10 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.List;
 
+/**
+ * klasa odpowiedzialna za wysyłanie informacji do użytkowników z poziomu serwera
+ *  z racji iz klasa posiada liste uzytkownikow mozemy wybrac pojedynczego uzytkownika
+ */
 class SendOffert implements Runnable
 {
     TextArea messages;
@@ -24,9 +28,12 @@ class SendOffert implements Runnable
         this.sockets = sockets;
     }
 
+    /**
+     * funkcja pozwalająca wysłać komunikat do użytkownika
+     */
     public void sendMessage()
     {
-        String messageToUser = field.getText();
+        String messageToUser = "-2 " + field.getText();
 
         for(int i=0;i<sockets.size();i++)
         {
@@ -36,7 +43,7 @@ class SendOffert implements Runnable
                 DataOutputStream out = new DataOutputStream(socket.getOutputStream());
                 field.clear();
                 out.writeUTF(messageToUser);
-                messages.appendText("Server: " + messageToUser + "\n");
+                messages.appendText("Server: " + field.getText() + "\n");
             }
             catch (IOException e)
             {
@@ -45,7 +52,10 @@ class SendOffert implements Runnable
             }
         }
     }
-
+    /**
+     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
+     * funkcja nowego wątku
+     */
     @Override
     public void run()
     {

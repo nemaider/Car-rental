@@ -10,6 +10,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * klasa która odpowiada za wysyłanie wiadomości do serwera
+ */
 class SendMessage
 {
     Button check;
@@ -21,6 +24,15 @@ class SendMessage
     DataOutputStream out;
     String messageToInsert;
 
+    /**
+     *
+     * @param marka obiekt który przechowuje informacje na temat marki samochodu wybranej przez użytkownika
+     * @param model obiekt który przechowuje informacje na temat modelu samochodu wybranego przez użytkownika
+     * @param start obiekt który przechowuje informacje na temat początkowej daty wypożyczenia samochodu
+     * @param end obiekt który przechowuje informacje na temat końcowej daty wypożyczenia samochodu
+     * @param check przycisk który po wciśnięciu sprawdza dostępność pojazdu
+     * @param socket obiekt klasy socket pozwalający na komunikacje między klientami a serwerem
+     */
     SendMessage(ComboBox marka, ComboBox model, DatePicker start, DatePicker end,Button check, Socket socket)
     {
         this.marka = marka;
@@ -31,6 +43,10 @@ class SendMessage
         this.check = check;
     }
 
+    /**
+     * funkcja której używamy do zarezerwowania samochodu o danym id w danym przedziale czasowym
+     * @param carID id samochodu który chcemy zarezerwować
+     */
     public void sendToInsert(String carID)
     {
         try
@@ -46,7 +62,10 @@ class SendMessage
         }
     }
 
-    public void sendToQuery()
+    /**
+     * funkcja która dodaje evenhandlej do przycisku który odpowiada za wysłanie zapytania do serwera poprzez socket
+     */
+    public void queryHandler()
     {
         try
         {
@@ -62,7 +81,6 @@ class SendMessage
                         String messageToServer = "";
                         messageToServer = String.format("%s %s %s %s", marka.getValue(), model.getValue(), start.getValue(), end.getValue());
                         out.writeUTF(messageToServer);
-                        /////////System.out.println("wiadomosc do servera: " + messageToServer);
                     }
                     catch(IOException e)
                     {
