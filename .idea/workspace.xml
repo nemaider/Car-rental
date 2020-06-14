@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_191.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/GetMessageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/SendMessageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DBConnect/ConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server/ReplyTheRequestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PJ_wypozyczalnia_samochodow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PJ_wypozyczalnia_samochodow.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/AutoComplete/AutoCompleteComboBoxListener$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/AutoComplete/AutoCompleteComboBoxListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/GetMessage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/GetMessage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/GetMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/GetMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/SendMessage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/SendMessage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/SendMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Client/SendMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/DBConnect/Connector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/DBConnect/Connector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Server/ServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/Server/ServerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/ValuesSetter/ValueSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/ValuesSetter/ValueSetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PJ_wypozyczalnia_samochodow/sample/sample.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,14 +131,12 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -101,18 +145,22 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1ZJ3aghxIrfHReDbmDvS59KmpoD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -120,10 +168,23 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mysql-connector-java-8.0.19/mysql-connector-java-8.0.19.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../czwartki/tworzeniewyjatkow" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -131,8 +192,16 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Server" />
+      <recent name="Client" />
+      <recent name="DBConnect" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="sample" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -164,7 +233,7 @@
     <configuration name="Main" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="PJ_wypozyczalnia_samochodow" />
-      <option name="VM_PARAMETERS" value="--module-path D:\java\javafx-13.0.2\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\exeve\Desktop\Car-rental\Car-rental\lib\javafx-13.0.2\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -180,7 +249,7 @@
     <configuration name="ServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.ServerApplication" />
       <module name="PJ_wypozyczalnia_samochodow" />
-      <option name="VM_PARAMETERS" value="--module-path D:\java\javafx-13.0.2\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\exeve\Desktop\Car-rental\Car-rental\lib\javafx-13.0.2\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Server.*" />
@@ -193,6 +262,85 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReplyTheRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PJ_wypozyczalnia_samochodow" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="Server.ReplyTheRequestTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReplyTheRequestTest.DataDifferenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PJ_wypozyczalnia_samochodow" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="Server.ReplyTheRequestTest" />
+      <option name="METHOD_NAME" value="DataDifferenceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReplyTheRequestTest.DateDifferenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PJ_wypozyczalnia_samochodow" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="Server.ReplyTheRequestTest" />
+      <option name="METHOD_NAME" value="DateDifferenceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReplyTheRequestTest.ShouldReturn5DataDifferenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PJ_wypozyczalnia_samochodow" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="Server.ReplyTheRequestTest" />
+      <option name="METHOD_NAME" value="ShouldReturn5DataDifferenceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,10 +379,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.ServerApplication" />
+      <item itemvalue="JUnit.ReplyTheRequestTest.DateDifferenceTest" />
+      <item itemvalue="JUnit.ReplyTheRequestTest.DataDifferenceTest" />
+      <item itemvalue="JUnit.ReplyTheRequestTest.ShouldReturn5DataDifferenceTest" />
+      <item itemvalue="JUnit.ReplyTheRequestTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ServerApplication" />
+        <item itemvalue="JUnit.ReplyTheRequestTest" />
+        <item itemvalue="JUnit.ReplyTheRequestTest.ShouldReturn5DataDifferenceTest" />
+        <item itemvalue="JUnit.ReplyTheRequestTest.DataDifferenceTest" />
+        <item itemvalue="JUnit.ReplyTheRequestTest.DateDifferenceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -266,11 +422,25 @@
       <workItem from="1586867580464" duration="94000" />
       <workItem from="1587055150995" duration="638000" />
       <workItem from="1587479773481" duration="33646000" />
+      <workItem from="1592079576133" duration="6624000" />
+      <workItem from="1592135139137" duration="4962000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -281,10 +451,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587480548002" />
-    <state x="774" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587481133007">
+    <state x="774" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592140642386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="774" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587481133007" />
+    <state x="774" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592140642386" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1584737513855">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -293,26 +463,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584776179314" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1587480827272">
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1592082457723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587480827272" />
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom" timestamp="1587549748539">
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592082457723" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1592140773857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587549748539" />
-    <state width="1877" height="178" key="GridCell.Tab.0.center" timestamp="1587549748539">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592140773857" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1592140773857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587549748539" />
-    <state width="1877" height="178" key="GridCell.Tab.0.left" timestamp="1587549748539">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592140773857" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1592140773857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587549748539" />
-    <state width="1877" height="178" key="GridCell.Tab.0.right" timestamp="1587549748539">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592140773857" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1592140773857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="178" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587549748539" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592140773857" />
     <state width="1877" height="178" key="GridCell.Tab.1.bottom" timestamp="1587549748539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -329,14 +499,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="178" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587549748539" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1587480833664">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1592079662783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587480833664" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592079662783" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587479774911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587479774911" />
+    <state x="664" y="412" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592080403135">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="664" y="412" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1592080403135" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592085604404">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592085604404" />
+    <state x="1104" y="324" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592139657639">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1104" y="324" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592139657639" />
+    <state x="667" y="76" width="585" height="888" key="find.popup" timestamp="1592083538740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="76" width="585" height="888" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592083538740" />
     <state x="342" y="222" key="new project wizard" timestamp="1585305616133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
