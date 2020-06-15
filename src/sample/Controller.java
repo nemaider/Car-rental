@@ -20,7 +20,7 @@ public class Controller
     public Button Close;
 
     /**
-     *funkcja która inicjuje dane o modelach po wybraniu marki pojazdu
+     *funkcja ktora inicjuje dane o modelach po wybraniu marki pojazdu
      */
     public void setModel() throws SQLException {
         ValueSetter.Model=Model;
@@ -29,7 +29,7 @@ public class Controller
     }
 
     /**
-     * funkcja czyści informacje od modelach gdy zostanie zmieniona marka pojazdu
+     * funkcja czysci informacje od modelach gdy zostanie zmieniona marka pojazdu
      */
     public void cleanModel()
     {
@@ -39,7 +39,7 @@ public class Controller
     }
 
     /**
-     * funckja która wywoływana jest gdy użytkownik kończy prace
+     * funckja ktora wywolywana jest gdy uzytkownik konczy prace
      */
     public void close()
     {

@@ -20,9 +20,9 @@ public class ValueSetter {
     public static DatePicker DoKiedy;
 
     /**
-     * funkcja wczytuje marki pojazdów dostępnych w bazie
-     * @param Marka obiekt w którym użytkownik ma wybór marki interesującego go pojazdu
-     * @throws SQLException wyjątek wyrzucany w przypadku braku danych
+     * funkcja wczytuje marki pojazdow dostepnych w bazie
+     * @param Marka obiekt w ktorym uzytkownik ma wybor marki interesujacego go pojazdu
+     * @throws SQLException wyjatek wyrzucany w przypadku braku danych
      */
     public void setMarka(ComboBox Marka) throws SQLException {
         Connector conn = new Connector();
@@ -36,8 +36,8 @@ public class ValueSetter {
     }
 
     /**
-     * funkcja wczytuje do aplikacji modele samochodów danej marki
-     * @throws SQLException wyjątek wyrzucany w przypadku braku danych
+     * funkcja wczytuje do aplikacji modele samochodow danej marki
+     * @throws SQLException wyjatek wyrzucany w przypadku braku danych
      */
     public static void setModel() throws SQLException {
         if(Model.getItems().isEmpty() && Marka.getValue()!=null)

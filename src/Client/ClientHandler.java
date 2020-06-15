@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * Klasa która uruchamia wątek klienta który odbiera wiadomosci od serwera oraz który wysyła wiadomości do serwera
+ * Klasa ktora uruchamia watek klienta ktory odbiera wiadomosci od serwera oraz ktory wysyla wiadomosci do serwera
  */
 public class ClientHandler implements Runnable
 {
@@ -23,13 +23,13 @@ public class ClientHandler implements Runnable
     SendMessage sendMessage;
 
     /**
-     * @param marka obiekt który przechowuje informacje na temat marki samochodu wybranej przez użytkownika
-     * @param model obiekt który przechowuje informacje na temat modelu samochodu wybranego przez użytkownika
-     * @param start obiekt który przechowuje informacje na temat początkowej daty wypożyczenia samochodu
-     * @param end obiekt który przechowuje informacje na temat końcowej daty wypożyczenia samochodu
-     * @param check przycisk który po wciśnięciu sprawdza dostępność pojazdu
-     * @param offerts obiekt w którym wyświetlane bedą oferty samochodów dostępnych do wyporzyczenia
-     * @param close przycisk zamykający okno
+     * @param marka obiekt ktory przechowuje informacje na temat marki samochodu wybranej przez uzytkownika
+     * @param model obiekt ktory przechowuje informacje na temat modelu samochodu wybranego przez uzytkownika
+     * @param start obiekt ktory przechowuje informacje na temat poczatkowej daty wypozyczenia samochodu
+     * @param end obiekt ktory przechowuje informacje na temat koncowej daty wypozyczenia samochodu
+     * @param check przycisk ktory po wcisnieciu sprawdza dostepnosc pojazdu
+     * @param offerts obiekt w ktorym wyswietlane beda oferty samochodow dostepnych do wyporzyczenia
+     * @param close przycisk zamykajacy okno
      */
     public ClientHandler(ComboBox marka, ComboBox model, DatePicker start, DatePicker end,Button check,ScrollPane offerts,Button close)
     {
@@ -43,8 +43,8 @@ public class ClientHandler implements Runnable
     }
 
     /**
-     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
-     * funckja nowego wątku
+     * nadpisana funkcja klasy rozszerzonej o Runnable ktora wywolywana jest poprzez funkcje start()
+     * funckja nowego watku
      */
     @Override
     public void run()
@@ -68,7 +68,7 @@ public class ClientHandler implements Runnable
     }
 
     /**
-     * funkcja kończąca wątek oraz wyrzucająca błąd jeśli sie to nie uda
+     * funkcja konczaca watek oraz wyrzucajaca blad jesli sie to nie uda
      * @throws InterruptedException
      */
     public void endThreads() throws InterruptedException

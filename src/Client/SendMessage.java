@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * klasa która odpowiada za wysyłanie wiadomości do serwera
+ * klasa ktora odpowiada za wysylanie wiadomosci do serwera
  */
 class SendMessage
 {
@@ -26,12 +26,12 @@ class SendMessage
 
     /**
      *
-     * @param marka obiekt który przechowuje informacje na temat marki samochodu wybranej przez użytkownika
-     * @param model obiekt który przechowuje informacje na temat modelu samochodu wybranego przez użytkownika
-     * @param start obiekt który przechowuje informacje na temat początkowej daty wypożyczenia samochodu
-     * @param end obiekt który przechowuje informacje na temat końcowej daty wypożyczenia samochodu
-     * @param check przycisk który po wciśnięciu sprawdza dostępność pojazdu
-     * @param socket obiekt klasy socket pozwalający na komunikacje między klientami a serwerem
+     * @param marka obiekt ktory przechowuje informacje na temat marki samochodu wybranej przez uzytkownika
+     * @param model obiekt ktory przechowuje informacje na temat modelu samochodu wybranego przez uzytkownika
+     * @param start obiekt ktory przechowuje informacje na temat poczatkowej daty wypozyczenia samochodu
+     * @param end obiekt ktory przechowuje informacje na temat koncowej daty wypozyczenia samochodu
+     * @param check przycisk ktory po wcisnieciu sprawdza dostepnosc pojazdu
+     * @param socket obiekt klasy socket pozwalajacy na komunikacje miedzy klientami a serwerem
      */
     SendMessage(ComboBox marka, ComboBox model, DatePicker start, DatePicker end,Button check, Socket socket)
     {
@@ -44,8 +44,8 @@ class SendMessage
     }
 
     /**
-     * funkcja której używamy do zarezerwowania samochodu o danym id w danym przedziale czasowym
-     * @param carID id samochodu który chcemy zarezerwować
+     * funkcja ktorej uzywamy do zarezerwowania samochodu o danym id w danym przedziale czasowym
+     * @param carID id samochodu ktory chcemy zarezerwowac
      */
     public void sendToInsert(String carID)
     {
@@ -63,7 +63,7 @@ class SendMessage
     }
 
     /**
-     * funkcja która dodaje evenhandlej do przycisku który odpowiada za wysłanie zapytania do serwera poprzez socket
+     * funkcja ktora dodaje evenhandlej do przycisku ktory odpowiada za wyslanie zapytania do serwera poprzez socket
      */
     public void queryHandler()
     {

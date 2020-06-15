@@ -3,14 +3,14 @@ package DBConnect;
 import java.sql.*;
 
 /**
- * klasa która łączy sie z bazą danych
+ * klasa ktora laczy sie z baza danych
  */
 public class Connector
 {
     public Connection conn;
 
     /**
-     * funkcja która relizuje połączenie z bazą danych
+     * funkcja ktora relizuje polaczenie z baza danych
      */
     public void connect()
     {
@@ -28,8 +28,8 @@ public class Connector
     }
 
     /**
-     * funkcja która pobiera informacje o markach z bazy
-     * @return wynik zapytania zawierający każdą marke w bazie
+     * funkcja ktora pobiera informacje o markach z bazy
+     * @return wynik zapytania zawierajacy kazda marke w bazie
      */
     public ResultSet getBrands() throws SQLException {
         Statement myQuery = conn.createStatement();
@@ -38,9 +38,9 @@ public class Connector
     }
 
     /**
-     * funkcja pobierająca modele z bazy danych które dotyczą danej marki
-     * @param brand marka którą zinteresowany jest klient
-     * @return wynik zapytania zwierający każdy model danej marki z bazy
+     * funkcja pobierajaca modele z bazy danych ktore dotycza danej marki
+     * @param brand marka ktora zinteresowany jest klient
+     * @return wynik zapytania zwierajacy kazdy model danej marki z bazy
      */
     public ResultSet getModel(String brand) throws SQLException {
         Statement myQuery = conn.createStatement();
@@ -49,12 +49,12 @@ public class Connector
     };
 
     /**
-     * funkcja która sprawdza czy pojazd interesujący klienta jest dostępny w danym przedziale czasowym
-     * @param marka marka pojazdu która interesuje użytkownika
-     * @param model model pojzadu który interesuje użytkownika
-     * @param start data wypożyczenia pojazdu
-     * @param end data końca wypożyczenia pojazdu
-     * @return wynik zapytania która zawiera wszyskie pozycje spełniające kryteria oraz dostępne w danym okresie
+     * funkcja ktora sprawdza czy pojazd interesujacy klienta jest dostepny w danym przedziale czasowym
+     * @param marka marka pojazdu ktora interesuje uzytkownika
+     * @param model model pojzadu ktory interesuje uzytkownika
+     * @param start data wypozyczenia pojazdu
+     * @param end data konca wypozyczenia pojazdu
+     * @return wynik zapytania ktora zawiera wszyskie pozycje spelniajace kryteria oraz dostepne w danym okresie
      */
     public ResultSet executeQuery(String marka, String model, String start, String end)
     {
@@ -65,12 +65,13 @@ public class Connector
             Statement myQuery = conn.createStatement();
 
             ResultSet resultSet = myQuery.executeQuery("select count(*) from rental join cars on rental.id_car=cars.id_car where marka='" + marka + "' and model='" + model +
-                    "' and ('" + start + "' between start and end and '" + end + "' between start and end)");
+                    "' and ('" + start + "' between start and end or '" + end + "' between start and end)");
 
                 while (resultSet.next())
                 {
                     int columnValue = resultSet.getInt(1);
 
+                    System.out.println(columnValue);
                     if (columnValue == 0) {
                         String query = "select distinct cars.id_car,cars.marka,cars.model,cars.logo,cars.cena from cars where marka='" + marka + "' and model='" + model + "'";
                         results = myQuery.executeQuery(query);
@@ -86,8 +87,8 @@ public class Connector
     }
 
     /**
-     * funkcja która wykonuje zapytanie rezerwujące dany samochod w danym okresie czasowym
-     * @param parameters informacje o pojeździe oraz okresie na który ma zostać zarezerwowany
+     * funkcja ktora wykonuje zapytanie rezerwujace dany samochod w danym okresie czasowym
+     * @param parameters informacje o pojezdzie oraz okresie na ktory ma zostac zarezerwowany
      */
     public void makeInsert(String []parameters) throws SQLException
     {

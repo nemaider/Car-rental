@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * Funkcja odpowiadająca za odebranie wiadomości od serwera pracująca w osobnym wątku
+ * Funkcja odpowiadajaca za odebranie wiadomosci od serwera pracujaca w osobnym watku
  */
 class GetMessage implements Runnable
 {
@@ -34,9 +34,9 @@ class GetMessage implements Runnable
     int code;
 
     /**
-     * @param socket socket przez który serwer komunikuje się z klientami
-     * @param offerts obiekt w którym wyświetlane są oferty pojazdów
-     * @param sendMessage obiekt klasy SendMessage który wykonuje polecenie zarezerwowania pojazdu
+     * @param socket socket przez ktory serwer komunikuje sie z klientami
+     * @param offerts obiekt w ktorym wyswietlane sa oferty pojazdow
+     * @param sendMessage obiekt klasy SendMessage ktory wykonuje polecenie zarezerwowania pojazdu
      */
     GetMessage(Socket socket,ScrollPane offerts, SendMessage sendMessage)
     {
@@ -46,8 +46,8 @@ class GetMessage implements Runnable
     }
 
     /**
-     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
-     * funckja nowego wątku
+     * nadpisana funkcja klasy rozszerzonej o Runnable ktora wywolywana jest poprzez funkcje start()
+     * funckja nowego watku
      */
     @Override
     public void run()
@@ -65,7 +65,9 @@ class GetMessage implements Runnable
                     String parameters[] = messageFromServer.split("\\s+");
                     code = Integer.parseInt(parameters[0]);
                     if(code == -2)
-                        System.out.println("siema");
+                    {
+                        System.out.println(messageFromServer.replace("-2", ""));
+                    }
                     else if(code <= 0)
                         showNoOfferts(code);
                     else
@@ -81,10 +83,10 @@ class GetMessage implements Runnable
 //////////////////////////////oferty////////////////////////////////////////
 
     /**
-     * funckja obliczająca cene za wypożyczenie
+     * funckja obliczajaca cene za wypozyczenie
      * @param cena cena pojazdu za dobe
-     * @param dni ilość dni na które pojazd ma być wypożyczony
-     * @return cena za wypożyczenie danego samochodu na daną ilość dni
+     * @param dni ilosc dni na ktore pojazd ma byc wypozyczony
+     * @return cena za wypozyczenie danego samochodu na dana ilosc dni
      */
     public Label calculate(String cena, String dni)
     {
@@ -94,22 +96,22 @@ class GetMessage implements Runnable
     }
 
     /**
-     * funkcja która wyświetla oferty, tworząca nowe obiekty dynamicznie
-     * @param j ilość ofert do wyświetlenia
-     * @param parameters dane pojazdów
+     * funkcja ktora wyswietla oferty, tworzaca nowe obiekty dynamicznie
+     * @param offertsNumber ilosc ofert do wyswietlenia
+     * @param parameters dane pojazdow
      */
-    public void showCars(int j, String parameters[])
+    public void showCars(int offertsNumber, String parameters[])
     {
-        ///pane na którym będą wyświetlane oferty
+        ///pane na ktorym beda wyswietlane oferty
         Pane offertsMainPane = new Pane();
-        offertsMainPane.setPrefSize(offertsScrollBox.getHeight(),(j)*125);
+        offertsMainPane.setPrefSize(offertsScrollBox.getHeight(),(offertsNumber)*125);
 
         offertsScrollBox.setContent(offertsMainPane);
-        offertsScrollBox.setPrefWidth((j-1)*125);
+        offertsScrollBox.setPrefWidth((offertsNumber-1)*125);
 
-        offert = new Pane[j];
+        offert = new Pane[offertsNumber];
 
-        for(int i=0;i<j;i++)
+        for(int i=0;i<offertsNumber;i++)
         {
             offert[i] = new Pane();
             offert[i].setBackground(new Background(new BackgroundFill(Color.web("#ffffff"), new CornerRadii(20), Insets.EMPTY)));
@@ -123,7 +125,7 @@ class GetMessage implements Runnable
             Label brand = new Label(parameters[6*i+1]);
             Label model = new Label( parameters[6*i+2]);
             Label vin = new Label("vin: " + parameters[6*i+3]);
-            String path = parameters[4*i+4];
+            String path = parameters[6*i+4];
             Label totalCost = new Label("za dobe: " + parameters[6*i+5] + "zl.");
 
             brand.setLayoutX(110);
@@ -183,9 +185,9 @@ class GetMessage implements Runnable
     }
 
     /**
-     * funkcja wykonywana kiedy nie ma żadnych ofert do wyświetlenia
-     * może ona wyświetlić informacje iż samochód został zarezerwowany
-     * @param j paramert decydujący o działaniu funkcji. Jeśli paramert jest równy -1 wtedy znaczy to iż samochód został zarezerwowany, jeśli 0 znaczy iż nie ma ofert dla użytkownika
+     * funkcja wykonywana kiedy nie ma zadnych ofert do wyswietlenia
+     * moze ona wyswietlic informacje iz samochod zostal zarezerwowany
+     * @param j paramert decydujacy o dzialaniu funkcji. Jesli paramert jest rowny -1 wtedy znaczy to iz samochod zostal zarezerwowany, jesli 0 znaczy iz nie ma ofert dla uzytkownika
      */
     public void showNoOfferts(int j)
     {

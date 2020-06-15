@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * klasa która odpowiada za odpowiedź na zapytanie od klientów, uruchomiona w nowym wątku
+ * klasa ktora odpowiada za odpowiedź na zapytanie od klientow, uruchomiona w nowym watku
  */
 class ReplyTheRequest implements Runnable
 {
@@ -27,8 +27,8 @@ class ReplyTheRequest implements Runnable
     String rentalStop;
     /**
      * Konstruktor
-     * @param messages obiekt w którym zapisane są logi
-     * @param socket socket przez który serwer komunikuje się z klientami
+     * @param messages obiekt w ktorym zapisane sa logi
+     * @param socket socket przez ktory serwer komunikuje sie z klientami
      */
     ReplyTheRequest(TextArea messages, Socket socket)
     {
@@ -37,10 +37,10 @@ class ReplyTheRequest implements Runnable
     }
 
     /**
-     * funkcja obliczająca różnice między dwoma dniami
-     * @param dateStart data poczatkowa wypożyczenia pojazdu
-     * @param dateStop data końcowa wypożyczenia pojazdu
-     * @return róznica dni miedzy data początkową a końcową
+     * funkcja obliczajaca roznice miedzy dwoma dniami
+     * @param dateStart data poczatkowa wypozyczenia pojazdu
+     * @param dateStop data koncowa wypozyczenia pojazdu
+     * @return roznica dni miedzy data poczatkowa a koncowa
      */
     public long dateDiffrece(String dateStart, String dateStop)
     {
@@ -69,10 +69,10 @@ class ReplyTheRequest implements Runnable
 
     /**
      *
-     * @param connector obiekt klasy Connector pozwalającej połączyć się serwerowi z bazą danych
-     * @param parameters dane otrzymane od klienta na temat samochodu(marka, model, data początkowa, data końcowa)
-     * @return wynik zapytania wraz z liczba wyników na pierwszym miejscu
-     * @throws SQLException wyjątek w przypadku błędu
+     * @param connector obiekt klasy Connector pozwalajacej polaczyc sie serwerowi z baza danych
+     * @param parameters dane otrzymane od klienta na temat samochodu(marka, model, data poczatkowa, data koncowa)
+     * @return wynik zapytania wraz z liczba wynikow na pierwszym miejscu
+     * @throws SQLException wyjatek w przypadku bledu
      */
     public String getCars(Connector connector, String parameters[]) throws SQLException {
         messageToUser = "0";
@@ -95,9 +95,9 @@ class ReplyTheRequest implements Runnable
     }
 
     /**
-     * funkcja która zamienia obiekt na ciąg znaków
+     * funkcja ktora zamienia obiekt na ciag znakow
      * @return wynik zapytania w postaci String
-     * @throws SQLException wyrzucony wyjątek w przypadku błędu
+     * @throws SQLException wyrzucony wyjatek w przypadku bledu
      */
     public String executeQuery() throws SQLException {
         messageToUser = size + " ";
@@ -116,8 +116,8 @@ class ReplyTheRequest implements Runnable
     }
 
     /**
-     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
-     * funkcja nowego wątku
+     * nadpisana funkcja klasy rozszerzonej o Runnable ktora wywolywana jest poprzez funkcje start()
+     * funkcja nowego watku
      */
     @Override
     public void run()
@@ -134,15 +134,15 @@ class ReplyTheRequest implements Runnable
                 String messageFromUser = in.readUTF();
                 String messageToUser = "0";
                 String parameters[] = messageFromUser.split("[^A-Za-z0-9-]");
-                //! w przypadku gdy użytkownik zdecyduje sie na samochód wysyłane są do serwera 3 argumenty
-                //! id samochodu, data początkowa oraz data końcowa
+                //! w przypadku gdy uzytkownik zdecyduje sie na samochod wysylane sa do serwera 3 argumenty
+                //! id samochodu, data poczatkowa oraz data koncowa
                 if(parameters.length == 3)
                 {
                     connector.makeInsert(parameters);
                     messageToUser="-1";
                 }
-                //! w przypadku kiedy użytkownik szuka odpowiedniego samochodu dla siebie wysyłane do serwaera sa 4 parametry
-                //! marka, model, data początkowa oraz data końcowa
+                //! w przypadku kiedy uzytkownik szuka odpowiedniego samochodu dla siebie wysylane do serwaera sa 4 parametry
+                //! marka, model, data poczatkowa oraz data koncowa
                 else if(parameters.length == 4)
                     messageToUser = getCars(connector, parameters);
 
@@ -165,7 +165,7 @@ class ReplyTheRequest implements Runnable
                 (IOException ex)
                 {
                     ex.printStackTrace();
-                    System.out.println("nie udało sie zamknąć połączenia");
+                    System.out.println("nie udalo sie zamknac polaczenia");
                 }
             }
         }

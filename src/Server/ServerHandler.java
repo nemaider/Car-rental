@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * klasa która obsługuje nowe watki serwera
+ * klasa ktora obsluguje nowe watki serwera
  */
 public class ServerHandler implements Runnable
 {
@@ -21,8 +21,8 @@ public class ServerHandler implements Runnable
 
     /**
      *
-     * @param messages obiekt w którym wypisywane są logi dla serwera
-     * @param field obiekt w którym administrator może wpisać informacje dla użytkowników
+     * @param messages obiekt w ktorym wypisywane sa logi dla serwera
+     * @param field obiekt w ktorym administrator moze wpisac informacje dla uzytkownikow
      */
     ServerHandler(TextArea messages, TextField field)
     {
@@ -30,8 +30,8 @@ public class ServerHandler implements Runnable
         this.messages = messages;
     }
     /**
-     * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
-     * funkcja nowego wątku
+     * nadpisana funkcja klasy rozszerzonej o Runnable ktora wywolywana jest poprzez funkcje start().
+     * Funkcja nowego watku
      */
     @Override
     public void run()
