@@ -25,7 +25,6 @@ class ReplyTheRequest implements Runnable
     ResultSet results;
     String rentalStart;
     String rentalStop;
-
     /**
      * Konstruktor
      * @param messages obiekt w którym zapisane są logi
@@ -111,6 +110,11 @@ class ReplyTheRequest implements Runnable
         return messageToUser;
     }
 
+    public void stop()
+    {
+
+    }
+
     /**
      * nadpisana funkcja klasy rozszerzonej o Runnable która wywolywana jest poprzez funkcje start()
      * funkcja nowego wątku
@@ -150,7 +154,6 @@ class ReplyTheRequest implements Runnable
         catch (IOException | SQLException e)
         {
             System.out.println("Klient odlaczyl sie");
-            e.printStackTrace();
             if(socket != null)
             {
                 try
@@ -162,6 +165,7 @@ class ReplyTheRequest implements Runnable
                 (IOException ex)
                 {
                     ex.printStackTrace();
+                    System.out.println("nie udało sie zamknąć połączenia");
                 }
             }
         }

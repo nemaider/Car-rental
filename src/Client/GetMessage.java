@@ -15,6 +15,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -99,38 +100,43 @@ class GetMessage implements Runnable
      */
     public void showCars(int j, String parameters[])
     {
-        //////////////////pane z wszystkimi ofertami
+        ///pane na którym będą wyświetlane oferty
         Pane offertsMainPane = new Pane();
-        offertsScrollBox.setContent(offertsMainPane);
-
-        offertsScrollBox.setPrefWidth((j-1)*125);
         offertsMainPane.setPrefSize(offertsScrollBox.getHeight(),(j)*125);
+
+        offertsScrollBox.setContent(offertsMainPane);
+        offertsScrollBox.setPrefWidth((j-1)*125);
+
         offert = new Pane[j];
 
         for(int i=0;i<j;i++)
         {
             offert[i] = new Pane();
-            offert[i].setBackground(new Background(new BackgroundFill(Color.web("#44515F"), CornerRadii.EMPTY, Insets.EMPTY)));
+            offert[i].setBackground(new Background(new BackgroundFill(Color.web("#ffffff"), new CornerRadii(20), Insets.EMPTY)));
             offert[i].setPrefSize(offertsScrollBox.getWidth()-100,100);
             offert[i].setLayoutY(i*105+25);
             offert[i].setLayoutX(50);
-            ////////dodawanie oferty
+
+            //dodawanie oferty
             offertsMainPane.getChildren().add(offert[i]);
 
-            Label name = new Label(parameters[6*i+1]);
-            Label description = new Label("model: " + parameters[6*i+2]);
+            Label brand = new Label(parameters[6*i+1]);
+            Label model = new Label( parameters[6*i+2]);
             Label vin = new Label("vin: " + parameters[6*i+3]);
             String path = parameters[4*i+4];
-            Label cena_za_dobe = new Label("za dobe: " + parameters[6*i+5] + "zl.");
+            Label totalCost = new Label("za dobe: " + parameters[6*i+5] + "zl.");
 
-            name.setLayoutX(110);
-            name.setLayoutY(20);
+            brand.setLayoutX(110);
+            brand.setLayoutY(20);
+            brand.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
 
-            description.setLayoutX(110);
-            description.setLayoutY(40);
+            model.setLayoutX(110);
+            model.setLayoutY(40);
+            model.setFont(Font.font("Verdana", FontWeight.BOLD, 13));
 
             vin.setLayoutX(110);
             vin.setLayoutY(60);
+            vin.setFont(Font.font("Verdana", FontWeight.NORMAL, 13));
 
             Image image = new Image(path);
             ImageView logo = new ImageView(image);
@@ -139,20 +145,22 @@ class GetMessage implements Runnable
             logo.setLayoutX(5);
             logo.setLayoutY(5);
 
-            cena_za_dobe.setLayoutX(200);
-            cena_za_dobe.setLayoutY(40);
+            totalCost.setLayoutX(200);
+            totalCost.setLayoutY(40);
+            totalCost.setFont(Font.font("Verdana", FontWeight.NORMAL, 13));
 
             if(!parameters[6*i+6].equals("-1") && !parameters[6*i+6].equals("0"))
             {
-                Label cena = calculate(parameters[6*i+6],parameters[6*i+5]);
-                cena.setLayoutX(200);
-                cena.setLayoutY(20);
+                Label cost = calculate(parameters[6*i+6],parameters[6*i+5]);
+                cost.setLayoutX(200);
+                cost.setLayoutY(20);
+                cost.setFont(Font.font("Verdana", FontWeight.NORMAL, 13));
 
                 Button rentalButton = new Button("zarezerwuj");
                 rentalButton.setLayoutX(offert[i].getPrefWidth()-100);
-                rentalButton.setLayoutY(35);
+                rentalButton.setLayoutY(55);
 
-                offert[i].getChildren().add(cena);
+                offert[i].getChildren().add(cost);
                 offert[i].getChildren().add(rentalButton);
 
                 int finalI = i;
@@ -165,12 +173,12 @@ class GetMessage implements Runnable
                 });
             }
 
-            ///////dodawanie nazwy samochodu i opisu
-            offert[i].getChildren().add(name);
-            offert[i].getChildren().add(description);
+            //dodawanie nazwy samochodu i opisu
+            offert[i].getChildren().add(brand);
+            offert[i].getChildren().add(model);
             offert[i].getChildren().add(vin);
             offert[i].getChildren().add(logo);
-            offert[i].getChildren().add(cena_za_dobe);
+            offert[i].getChildren().add(totalCost);
         }
     }
 
