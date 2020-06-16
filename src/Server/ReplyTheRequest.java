@@ -46,25 +46,21 @@ class ReplyTheRequest implements Runnable
     {
         if(dateStart.equals("null") || dateStop.equals("null"))
             return -1;
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
-        Date d1,d2;
-        long diffDays = 0;
-        long diff;
+        long roznica = 0;
 
         try
         {
-            System.out.println(dateStart + " " + dateStop);
-            d1 = format.parse(dateStart);
-            d2 = format.parse(dateStop);
-            diff = d2.getTime() - d1.getTime();
-            diffDays = diff / (24 * 60 * 60 * 1000);
-            System.out.print(diffDays);
+            LocalDate d1 = LocalDate.parse(dateStart);
+            LocalDate d2 = LocalDate.parse(dateStop);
+            roznica = ChronoUnit.DAYS.between(d1,d2);
+            System.out.println(roznica);
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-        return diffDays;
+
+        return roznica;
     }
 
     /**
